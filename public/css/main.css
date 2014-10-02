@@ -58,15 +58,45 @@ table {
 *********************************************************/
 
 #logo {
-  width: 75px;
-  height: 75px;
+  width: 125px;
+  height: 125px;
   border-radius: 100%;
-  border: 2px solid #FFF;
+  border: 2px solid #ABB6EF;
+  margin-left: 65px;
+  margin-top: 25px;
+  background-color: #ABCDEF;
+}
+
+#logo p {
+  position: relative;
+  margin-left: 44px;
+  margin-top: 55px;
 }
 
 #navbar {
-  position: absolute;
-  top: 65px;
-  right: 45px;
-  color: #FFF;
+  position: fixed;
+  top: 25px;
+  right: 75px;
+  color: #000;
+}
+
+#bars {
+  width: 125px;
+}
+
+nav a {
+  display: block;
+  width: 125px;
+  text-decoration: none;
+  color: #000;
+  margin: 5px 0;
+}
+
+/*****************************************************
+****************SIGN-IN PAGE**************************
+*****************************************************/
+
+#wrapper {
+  background-image: url("/images/iceland.gif");
+  background-image: no-repeat;
 }
