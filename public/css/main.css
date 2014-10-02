@@ -100,3 +100,38 @@ nav a {
   background-image: url("/images/iceland.gif");
   background-image: no-repeat;
 }
+
+#headline h1 {
+  text-align: center;
+  font-size: 8em;
+  margin-top: -50px;
+}
+
+.little {
+  font-size: 70px;
+}
+
+#headline p {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#login {
+  text-align: right;
+  width: 230px;
+  padding-top: 75px;
+  padding-left: 50px;
+}
+
+#login legend {
+  text-align: center;
+  margin-top: 75px;
+}
+
+#sign-in {
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: rgba(171, 205, 239, .90);
+  border-radius: 15px;
+}
