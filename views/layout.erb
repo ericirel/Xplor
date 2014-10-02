@@ -16,6 +16,7 @@
       <a href="/account">Account Info</a>
       <a href="/history">Your History</a>
     </nav>
+    <%=flash[:notice] if flash[:notice] %>
     <%= yield %>
   </body>
 </html>
