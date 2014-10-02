@@ -137,10 +137,16 @@ nav a {
 }
 
 .form-control{
-  width: 300px;
-  height: 150px;
-  margin: 0 auto;
-  border: 2px solid gray;
+  width: 400px;
+  height: 350px;
+  margin-left: 50px;
+  margin-top: 40px;
+}
+
+.btn-primary{
+  width: 125px;
+  margin-left: 300px;
+  margin-top: 20px;
 }
 /**************************************************
 ****************HOME PAGE**************************
