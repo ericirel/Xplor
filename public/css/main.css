@@ -135,3 +135,49 @@ nav a {
   background-color: rgba(171, 205, 239, .90);
   border-radius: 15px;
 }
+
+/**************************************************
+****************HOME PAGE**************************
+**************************************************/
+
+#home {
+  background-image: url("/images/mountain.gif");
+  background-image: no-repeat;
+}
+
+/***************************************************
+***************SIGN-UP PAGE*************************
+***************************************************/
+
+#enroll {
+  background-image: url("/images/sheep.gif");
+  background-image: no-repeat;
+}
+
+/****************************************************
+***************ACCOUNT PAGE**************************
+****************************************************/
+
+#account {
+  background-image: url("/images/ice.gif");
+  background-image: no-repeat;
+}
+
+
+/*****************************************************
+*****************HISTORY PAGE*************************
+*****************************************************/
+
+#history {
+  background-image: url("/images/stream.gif");
+  background-image: no-repeat;
+}
+
+/******************************************************
+*****************SIGN-OUT PAGE*************************
+******************************************************/
+
+#leave {
+  background-image: url("/images/meadow.gif");
+  background-image: no-repeat;
+}
