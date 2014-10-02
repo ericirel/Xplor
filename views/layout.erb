@@ -12,7 +12,7 @@
 
         $("#bars").on('mouseenter', function() {
           $("#nav").slideDown();
-          
+
         });
 
         $("#nav").on('mouseleave', function() {
@@ -39,7 +39,10 @@
         <a href="/signout">Sign-Out</a>
       </ul>
     </nav>
-    <%=flash[:notice] if flash[:notice] %>
+    <div class="flash">
+      <%=flash[:notice] if flash[:notice] %>
+    </div>
+
     <%= yield %>
   </body>
 </html>
