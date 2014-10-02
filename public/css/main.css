@@ -154,6 +154,19 @@ nav a {
   background-image: no-repeat;
 }
 
+#user {
+  width: 400px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: rgba(171, 205, 239, .90);
+}
+
+#user-field {
+  width: 200px;
+
+
+}
+
 /****************************************************
 ***************ACCOUNT PAGE**************************
 ****************************************************/

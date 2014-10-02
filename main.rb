@@ -48,6 +48,7 @@ end
 
 post '/sign-in' do
   @user = User.where(params[:user]).first
+  puts "These are my params " + params.inspect
   if !@user
     flash[:notice] = "#{params[:user][:email]} does not match our records."
     redirect "/index"
