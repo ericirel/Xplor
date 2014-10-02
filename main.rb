@@ -38,6 +38,10 @@ get '/login-failed' do
   erb :loginfailed
 end
 
+get '/sign-out' do
+  erb :signout
+end
+
 #####################
         #POST
 #####################
