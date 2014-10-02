@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Xplor your World</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+  </head>
+  <body>
+    <div id="logo">
+      <p>Xplor</p>
+    </div>
+    <nav id="navbar">
+      <i class="fa fa-bars fa-4x"></i>
+      <a href="/signout">Sign-Out</a>
+      <a href="/account">Account Info</a>
+      <a href="/history">Your History</a>
+    </nav>
+    <%= yield %>
+  </body>
+</html>
