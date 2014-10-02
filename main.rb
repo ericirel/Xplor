@@ -42,6 +42,12 @@ get '/sign-out' do
   erb :signout
 end
 
+def current_user
+  if session[:user_id]
+    @current_user = User.find(session[:user_id])
+  end
+end
+
 #####################
         #POST
 #####################
@@ -49,38 +55,34 @@ end
 post '/sign-in' do
   @user = User.where(params[:user]).first
   if !@user
-    flash[:notice] = "#{params[:user][:email]} does not match our records."
-    redirect "/index"
+    flash[:notice] = "#{params[:email]} does not match our records."
+    redirect "/"
   elsif
-     @user.password == params[:user][:password]
-    flash[:notice] = "Welcome #{params[:user][:email]}"
+    @user.password == params[:password]
+    session[:user_id] = @user.id
+    flash[:notice] = "Welcome #{params[:email]}"
     redirect "/home"
   else
     flash[:notice] = "Failed to log in."
-    redirect "/index"
-  end
-end
-
-def current_user
-  if session[:user_id]
-    @current_user = User.find(session[:user_id])
+    redirect "/"
   end
 end
 
 post '/sign-out' do
-  session[:user_id] = nil
-  flash[:notice] = "#{params[:user][:email]} has logged out"
-  redirect "/index"
+  session.clear
+  # session[:user_id] = nil
+  flash[:notice] = "#{params[:email]} has logged out"
+  redirect "/"
 end
 
-post 'sign-up' do
-  @user = User.create(params[:user])
-  @account = Account.new(params[:account])
-  @account.user_id = @user.id
-  @account.fname = @fname
-  @account.lname = @lname
-  @account.hometown = @hometown
-  @account.age = @age
-  @account.interests = @interests
-end
+# post 'sign-up' do
+#   @user = User.create(params[:user])
+#   @account = Account.new(params[:account])
+#   @account.user_id = @user.id
+#   @account.fname = @fname
+#   @account.lname = @lname
+#   @account.hometown = @hometown
+#   @account.age = @age
+#   @account.interests = @interests
+# end
 
