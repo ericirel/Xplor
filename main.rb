@@ -48,12 +48,13 @@ end
 
 post '/sign-in' do
   @user = User.where(params[:user]).first
-  if @user.password == params[:user][:password]
+  if !@user
+    flash[:notice] = "#{params[:user][:email]} does not match our records."
+    redirect "/index"
+  elsif
+     @user.password == params[:user][:password]
     flash[:notice] = "Welcome #{params[:user][:email]}"
     redirect "/home"
-  elsif !@user
-    flash[:notice] = "#{params[:user][:email]} does not match our records."
-    redirect "/sign-up"
   else
     flash[:notice] = "Failed to log in."
     redirect "/index"
@@ -68,7 +69,7 @@ end
 
 post '/sign-out' do
   session[:user_id] = nil
-  flash[:notice] = "Logged out"
+  flash[:notice] = "#{params[:user][:email]} has logged out"
   redirect "/index"
 end
 
