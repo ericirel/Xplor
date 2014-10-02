@@ -54,6 +54,7 @@ end
 
 post '/sign-in' do
   @user = User.where(params[:user]).first
+  puts "These are my params " + params.inspect
   if !@user
     flash[:notice] = "#{params[:email]} does not match our records."
     redirect "/"
@@ -75,7 +76,7 @@ post '/sign-out' do
   redirect "/"
 end
 
-post 'sign-up' do
+post '/sign-up' do
   @user = User.create(params[:user])
   @account = Account.new(params[:user])
   @account.user_id = @user.id
@@ -84,5 +85,7 @@ post 'sign-up' do
   @account.hometown = @hometown
   @account.age = @age
   @account.interests = @interests
+  puts "These are my params " + params.inspect
+  redirect '/home'
 end
 

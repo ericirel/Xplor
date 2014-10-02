@@ -37,13 +37,12 @@
         <a href="/home">Home Page</a>
         <a href="/account">Account Info</a>
         <a href="/history">Your History</a>
-        <a href="/signout">Sign-Out</a>
+        <a href="/sign-out">Sign-Out</a>
       </ul>
     </nav>
     <div class="flash">
       <%=flash[:notice] if flash[:notice] %>
     </div>
-
     <%= yield %>
   </body>
 </html>
