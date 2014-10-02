@@ -135,3 +135,10 @@ nav a {
   background-color: rgba(171, 205, 239, .90);
   border-radius: 15px;
 }
+
+.form-control{
+  width: 300px;
+  height: 150px;
+  margin: 0 auto;
+  border: 2px solid gray;
+}

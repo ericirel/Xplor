@@ -71,5 +71,12 @@ end
 
 post 'sign-up' do
   @user = User.create(params[:user])
+  @account = Account.new(params[:account])
+  @account.user_id = @user.id
+  @account.fname = @fname
+  @account.lname = @lname
+  @account.hometown = @hometown
+  @account.age = @age
+  @account.interests = @interests
 end
 
