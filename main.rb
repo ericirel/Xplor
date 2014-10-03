@@ -36,6 +36,8 @@ get '/sign-up' do
 end
 
 get '/account' do
+  @user = current_user
+  
   erb :account
 end
 
@@ -66,15 +68,15 @@ post '/sign-in' do
   puts "These are my params " + params.inspect
   if !@user
     flash[:notice] = "#{params[:email]} does not match our records."
-    redirect "/"
+    redirect '/'
   elsif
     @user.password == params[:password]
     session[:user_id] = @user.id
     flash[:notice] = "Welcome #{params[:email]}"
-    redirect "/home"
+    redirect '/home'
   else
     flash[:notice] = "Failed to log in."
-    redirect "/"
+    redirect '/'
   end
 end
 
@@ -82,7 +84,7 @@ post '/sign-out' do
   #session.clear
   session[:user_id] = nil
   # flash[:notice] = "#{params[:email]} has logged out"
-  redirect "/sign-out"
+  redirect '/sign-out'
 end
 
 post '/sign-up' do

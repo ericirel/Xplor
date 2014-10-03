@@ -8,19 +8,19 @@
  <!--    <fieldset id="user-field"> -->
       <legend>Account Details</legend>
       <ul>
-        <input type="text" name="fname">
+        <input type="text" name="fname" value="<%= current_user.account.fname %>">
         <label for="fname">First Name</label>
-        <input type="text" name="lname">
+        <input type="text" name="lname" value="<%= current_user.account.lname %>">
         <label for="lname">Last Name</label>
-        <input type="text" name="hometown">
+        <input type="text" name="hometown" value="<%= current_user.account.hometown %>">
         <label for="hometown">Hometown</label>
-        <input type="number" name="age">
+        <input type="number" name="age" value="<%= current_user.account.age %>">
         <label for="age">Age</label>
-        <input type="text" name="interests">
+        <input type="text" name="interests" value="<%= current_user.account.interests %>">
         <label for="interests">Interests</label>
-        <input type="text" name="email">
+        <input type="text" name="email" value="<%= current_user.email %>">
         <label for="email">Email</label>
-        <input type="password" name="password">
+        <input type="password" name="password" value="<%= current_user.password %>">
         <label for="password">Password</label>
         <!-- <input type="submit" name="submit" value="Edit Account"> -->
         <button type="submit" name="submit" value="Edit Account"class="pure-button pure-button-primary">Submit</button>
