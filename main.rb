@@ -42,6 +42,11 @@ get '/sign-out' do
   erb :signout
 end
 
+get '/home/new' do
+  erb :home
+  @posts = Posts.all
+end
+
 def current_user
   if session[:user_id]
     @current_user = User.find(session[:user_id])
@@ -70,13 +75,16 @@ post '/sign-in' do
 end
 
 post '/sign-out' do
-  puts session[:user_id]
   session.clear
-  puts session[:user_id]
   # session[:user_id] = nil
+<<<<<<< HEAD
   # flash[:notice] = "#{params[:email]} has logged out"
   puts "These are my params " + params.inspect
   redirect "/sign-out"
+=======
+  flash[:notice] = "#{params[:email]} has logged out"
+  redirect "/"
+>>>>>>> d429ac9821062471f190764e2349129714b2f4b5
 end
 
 post '/sign-up' do
