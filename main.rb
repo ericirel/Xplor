@@ -65,18 +65,13 @@ post '/sign-in' do
   @user = User.where(params[:user]).first
   puts "These are my params " + params.inspect
   if !@user
-    flash[:notice] = "#{params[:user][:email]} does not match our records."
+    flash[:notice] = "#{params[:email]} does not match our records."
     redirect "/"
   elsif
-    @user.password == params[:user][:password]
+    @user.password == params[:password]
     session[:user_id] = @user.id
-<<<<<<< HEAD
     flash[:notice] = "Welcome #{params[:email]}"
-    redirect "/home/#{@user.id}"
-=======
-    flash[:notice] = "Welcome #{params[:user][:email]}"
     redirect "/home"
->>>>>>> 411cc7b7d2fa6a3e892f0541e1d89cde1847b47a
   else
     flash[:notice] = "Failed to log in."
     redirect "/"
@@ -105,7 +100,6 @@ post '/sign-up' do
   redirect '/home'
 end
 
-<<<<<<< HEAD
 delete '/delete' do
   # @user = User.find(session[:user_id])
   # @account = Account.find(session[:account_id])
@@ -118,6 +112,10 @@ end
 patch '/' do
 
 end
-=======
->>>>>>> 411cc7b7d2fa6a3e892f0541e1d89cde1847b47a
 
+post '/home' do
+  puts params[:post]
+  @post = Post.create(params[:post])
+  flash[:notice] = "Test post"
+  redirect '/home'
+end

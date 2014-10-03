@@ -1,12 +1,22 @@
 <head>
   <title>Sign-up Page</title>
   <link rel="stylesheet" href="/css/main.css" type="text/css">
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+   <script>
+        $(document).ready(function(){
+          $('form').click(function(){
+            $('this').css('font-weight', 'bold');
+          });
+        });
+   </script>
 </head>
 <body id="enroll">
-  <form id="user" action="/sign-up" method="POST">
+   <form class="pure-form pure-form-stacked" action="/sign-up" method="POST">
+  <!-- <form id="user" action="/sign-up" method="POST"> -->
     <fieldset id="user-field">
       <legend>Sign-Up for Adventure</legend>
-      <ul>  
+      <ul>
         <input type="text" name="[account]fname">
         <label for="fname">First Name</label>
         <input type="text" name="[account]lname">
@@ -21,7 +31,8 @@
         <label for="email">Email</label>
         <input type="password" name="[user]password">
         <label for="password">Create a Password</label>
-        <input type="submit" name="submit" value="Sign-up">
+        <!-- <input type="submit" name="submit" value="Sign-up"> -->
+        <button type="submit" name="submit" value="Sign-Up"class="pure-button pure-button-primary">Submit</button>
       </ul>
     </fieldset>
   </form>

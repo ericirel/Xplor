@@ -4,7 +4,7 @@
   </title>
 </head>
 <body id="home">
-  <form method="POST" action="/home/new">
+  <form method="POST" action="/home">
     <label for="location"></label>
       <input type="text" name="[post]location" placeholder="Your Location" class="form-control">
     <label for="body"></label>
@@ -12,7 +12,8 @@
   <br>
     <button type="submit" value="post" class="btn btn-primary btn-lg">Post</button>
   </form>
-  <%= body %>
+  <h2><%= @post.location %></h2>
+  <p><%= @post.body %></p>
 
 </body>
 
