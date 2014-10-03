@@ -70,10 +70,13 @@ post '/sign-in' do
 end
 
 post '/sign-out' do
+  puts session[:user_id]
   session.clear
+  puts session[:user_id]
   # session[:user_id] = nil
   flash[:notice] = "#{params[:email]} has logged out"
-  redirect "/"
+  puts "These are my params " + params.inspect
+  redirect "/sign-out"
 end
 
 post '/sign-up' do
