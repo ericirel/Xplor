@@ -16,7 +16,7 @@ def current_user
   end
 end
 
-helpers { alias_method :current_user, :current_user}
+#helpers { alias_method :current_user, :current_user}
 
 #####################
         #GET
@@ -78,8 +78,8 @@ post '/sign-in' do
 end
 
 post '/sign-out' do
-  session.clear
-  # session[:user_id] = nil
+  #session.clear
+  session[:user_id] = nil
   # flash[:notice] = "#{params[:email]} has logged out"
   redirect "/sign-out"
 end
@@ -111,11 +111,12 @@ end
 
 post '/post/new' do
   puts "These are my params " + params.inspect
-  @post = Post.create(params[:post])
-  @user = User.find(session[:user_id])
+  @user = User.find(current_user)
+  @post = Post.new(params[:post])
   @post.user_id = @user.id
   @location = params[:location]
   @body = params[:body]
+  @post.save!
   redirect '/home'
 end
 
