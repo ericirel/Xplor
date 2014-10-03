@@ -57,11 +57,6 @@ get '/post/new' do
 
 end
 
-
-get '/home/#{@user.id}' do
-
-end
-
 #####################
         #POST
 #####################
@@ -130,4 +125,9 @@ patch '/' do
 
 end
 
-
+post '/home' do
+  puts params[:post]
+  @post = Post.create(params[:post])
+  flash[:notice] = "Test post"
+  redirect '/home'
+end
