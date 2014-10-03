@@ -27,6 +27,7 @@ get '/' do
 end
 
 get '/home' do
+  @user = current_user
   erb :home
 end
 
@@ -36,7 +37,7 @@ end
 
 get '/account' do
   @user = current_user
-  
+
   erb :account
 end
 
