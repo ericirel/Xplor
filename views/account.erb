@@ -3,10 +3,11 @@
   <link rel="stylesheet" href="/css/main.css" type="text/css">
 </head>
 <body id="account">
-  <form id="user" action="/sign-up" method="POST">
-    <fieldset id="user-field">
+ <!--  <form id="user" action="/sign-up" method="POST"> -->
+    <form class="pure-form pure-form-stacked" action="/sign-up" method="POST">
+ <!--    <fieldset id="user-field"> -->
       <legend>Account Details</legend>
-      <ul>  
+      <ul>
         <input type="text" name="fname">
         <label for="fname">First Name</label>
         <input type="text" name="lname">
@@ -21,8 +22,12 @@
         <label for="email">Email</label>
         <input type="password" name="password">
         <label for="password">Password</label>
-        <input type="submit" name="submit" value="Edit Account">
+        <!-- <input type="submit" name="submit" value="Edit Account"> -->
+        <button type="submit" name="submit" value="Edit Account"class="pure-button pure-button-primary">Submit</button>
       </ul>
     </fieldset>
+  </form>
+  <form action='/delete' method='DELETE'>
+    <button type="button" class="btn btn-danger" value="Delete" action="/delete">Delete Account</button>
   </form>
 </body>

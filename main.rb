@@ -53,6 +53,10 @@ def current_user
   end
 end
 
+get '/home/#{@user.id}' do
+
+end
+
 #####################
         #POST
 #####################
@@ -67,7 +71,7 @@ post '/sign-in' do
     @user.password == params[:password]
     session[:user_id] = @user.id
     flash[:notice] = "Welcome #{params[:email]}"
-    redirect "/home"
+    redirect "/home/#{@user.id}"
   else
     flash[:notice] = "Failed to log in."
     redirect "/"
@@ -92,5 +96,18 @@ post '/sign-up' do
   @account.interests = @interests
   puts "These are my params " + params.inspect
   redirect '/home'
+end
+
+delete '/delete' do
+  # @user = User.find(session[:user_id])
+  # @account = Account.find(session[:account_id])
+  user.account.destroy
+  user.destroy
+  redirect '/'
+  flash[:notice] = "#{params[:email]} has been deleted"
+end
+
+patch '/' do
+
 end
 

@@ -147,6 +147,7 @@ nav a {
   text-align: center;
   margin-bottom: 30px;
   font-family: 'Lucida Grande', sans-serif;
+  font-weight: 500;
 }
 
 #login {
@@ -207,10 +208,37 @@ textarea{
   margin-top: 20px;
 }
 
+.btn-danger{
+  margin-left: 600px;
+  margin-top: -83px;
+}
+
+.btn-default{
+  margin-left: 100px;
+}
+
 .location{
 
 }
 
+.pure-group{
+  height: 100px;
+}
+
+.pure-form{
+  width: 400px;
+  height: 500px;
+  margin: 0 auto;
+  padding-left: 80px;
+  background-color: rgba(171, 205, 239, .90);
+  border-radius: 20px;
+  font-family: sans-serif;
+  font-weight: lighter;
+}
+
+.pure-button{
+  margin: 0 auto;
+}
 
 /**************************************************
 ****************HOME PAGE**************************
