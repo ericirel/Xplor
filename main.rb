@@ -54,7 +54,6 @@ get '/post/new' do
   erb :home
   @user = current_user
   @posts = Post.all
-
 end
 
 #####################
