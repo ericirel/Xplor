@@ -4,10 +4,14 @@
   </title>
 </head>
 <body id="home">
-  <form>
-    <textarea class="form-control" rows="3"></textarea>
+  <form method="POST" action="/home/new">
+    <label for="location"></label>
+      <input type="text" name="[post]location" placeholder="Your Location" class="form-control">
+    <label for="body"></label>
+      <textarea maxlength="150" name="[post]body" placeholder="What are you up to?" class="form-control" rows="3"></textarea>
   <br>
     <button type="button" class="btn btn-primary btn-lg active">Post</button>
   </form>
+
 </body>
 

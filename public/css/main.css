@@ -132,7 +132,7 @@ nav a {
 #login label {
   color: #214F7C;
 }
-
+/***********************/
 #sign-in {
   width: 400px;
   height: 300px;
@@ -147,7 +147,7 @@ nav a {
 
 .form-control{
   width: 400px;
-  height: 350px;
+  height: 40px;
   margin-left: 50px;
   margin-top: 40px;
 }
@@ -157,6 +157,12 @@ nav a {
   margin-left: 300px;
   margin-top: 20px;
 }
+
+.location{
+
+}
+/***********************/
+
 /**************************************************
 ****************HOME PAGE**************************
 **************************************************/
