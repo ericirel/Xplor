@@ -5,12 +5,13 @@
 </head>
 <body id="home">
   <form method="POST" action="/home">
+  <form method="POST" action="/post/new">
     <label for="location"></label>
       <input type="text" name="[post]location" placeholder="Your Location" class="form-control">
     <label for="body"></label>
       <textarea maxlength="150" name="[post]body" placeholder="What are you up to?" class="form-control" rows="3"></textarea>
   <br>
-    <button type="submit" value="post" class="btn btn-primary btn-lg">Post</button>
+    <button type="submit" value="submit" class="btn btn-primary btn-lg">Post</button>
   </form>
   <h2><%= @post.location %></h2>
   <p><%= @post.body %></p>

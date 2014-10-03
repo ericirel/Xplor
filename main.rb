@@ -10,6 +10,14 @@ set :sessions => true
 
 set :database, "sqlite3:xplor.sqlite3"
 
+def current_user
+  if session[:user_id]
+    @current_user = User.find(session[:user_id])
+  end
+end
+
+helpers { alias_method :current_user, :current_user}
+
 #####################
         #GET
 #####################
@@ -42,18 +50,10 @@ get '/sign-out' do
   erb :signout
 end
 
-get '/home/new' do
+get '/post/new' do
   erb :home
-  @posts = Posts.all
-end
-
-def current_user
-  if session[:user_id]
-    @current_user = User.find(session[:user_id])
-  end
-end
-
-get '/home/#{@user.id}' do
+  @user = current_user
+  @posts = Post.all
 
 end
 
@@ -62,7 +62,7 @@ end
 #####################
 
 post '/sign-in' do
-  @user = User.where(params[:user]).first
+  @user = User.where(email: params[:email]).first
   puts "These are my params " + params.inspect
   if !@user
     flash[:notice] = "#{params[:email]} does not match our records."
@@ -88,7 +88,7 @@ end
 post '/sign-up' do
   puts "These are my params " + params.inspect
   @user = User.create(params[:user])
-  @account = Account.create(params[:account])
+  @account = Account.new(params[:account])
   @account.user_id = @user.id
   @email = params[:email]
   @password = params[:password]
@@ -97,6 +97,7 @@ post '/sign-up' do
   @hometown = params[:hometown]
   @age = params[:age]
   @interests = params[:interests]
+  @account.save!
   redirect '/home'
 end
 
@@ -107,6 +108,16 @@ delete '/delete' do
   user.destroy
   redirect '/'
   flash[:notice] = "#{params[:email]} has been deleted"
+end
+
+post '/post/new' do
+  puts "These are my params " + params.inspect
+  @post = Post.create(params[:post])
+  @user = User.find(session[:user_id])
+  @post.user_id = @user.id
+  @location = params[:location]
+  @body = params[:body]
+  redirect '/home'
 end
 
 patch '/' do
