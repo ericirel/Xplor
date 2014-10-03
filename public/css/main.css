@@ -281,7 +281,19 @@ textarea{
 *****************SIGN-OUT PAGE*************************
 ******************************************************/
 
-#leave {
+#sign-out {
   background-image: url("/images/meadow.gif");
   background-image: no-repeat;
+}
+
+#sign-out h1 {
+  text-align: center;
+  font-family: 'Big Caslon', serif;
+  font-size: 3em;
+}
+
+#sign-out p {
+  text-align: center;
+  font-family: 'Lucida Grande', sans-serif;
+  font-size: 20px;
 }

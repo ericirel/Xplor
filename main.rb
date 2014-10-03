@@ -77,14 +77,8 @@ end
 post '/sign-out' do
   session.clear
   # session[:user_id] = nil
-<<<<<<< HEAD
   # flash[:notice] = "#{params[:email]} has logged out"
-  puts "These are my params " + params.inspect
   redirect "/sign-out"
-=======
-  flash[:notice] = "#{params[:email]} has logged out"
-  redirect "/"
->>>>>>> d429ac9821062471f190764e2349129714b2f4b5
 end
 
 post '/sign-up' do
