@@ -65,13 +65,18 @@ post '/sign-in' do
   @user = User.where(params[:user]).first
   puts "These are my params " + params.inspect
   if !@user
-    flash[:notice] = "#{params[:email]} does not match our records."
+    flash[:notice] = "#{params[:user][:email]} does not match our records."
     redirect "/"
   elsif
-    @user.password == params[:password]
+    @user.password == params[:user][:password]
     session[:user_id] = @user.id
+<<<<<<< HEAD
     flash[:notice] = "Welcome #{params[:email]}"
     redirect "/home/#{@user.id}"
+=======
+    flash[:notice] = "Welcome #{params[:user][:email]}"
+    redirect "/home"
+>>>>>>> 411cc7b7d2fa6a3e892f0541e1d89cde1847b47a
   else
     flash[:notice] = "Failed to log in."
     redirect "/"
@@ -86,18 +91,21 @@ post '/sign-out' do
 end
 
 post '/sign-up' do
-  @user = User.create(params[:user])
-  @account = Account.new(params[:user])
-  @account.user_id = @user.id
-  @account.fname = @fname
-  @account.lname = @lname
-  @account.hometown = @hometown
-  @account.age = @age
-  @account.interests = @interests
   puts "These are my params " + params.inspect
+  @user = User.create(params[:user])
+  @account = Account.create(params[:account])
+  @account.user_id = @user.id
+  @email = params[:email]
+  @password = params[:password]
+  @fname = params[:fname]
+  @lname = params[:lname]
+  @hometown = params[:hometown]
+  @age = params[:age]
+  @interests = params[:interests]
   redirect '/home'
 end
 
+<<<<<<< HEAD
 delete '/delete' do
   # @user = User.find(session[:user_id])
   # @account = Account.find(session[:account_id])
@@ -110,4 +118,6 @@ end
 patch '/' do
 
 end
+=======
+>>>>>>> 411cc7b7d2fa6a3e892f0541e1d89cde1847b47a
 
