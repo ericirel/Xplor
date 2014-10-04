@@ -28,6 +28,7 @@ end
 
 get '/home' do
   @user = current_user
+  @posts = Post.all
   erb :home
 end
 
@@ -59,6 +60,7 @@ get '/post/new' do
   @posts = Post.all
 
 end
+
 
 #####################
         #POST
@@ -104,16 +106,7 @@ post '/sign-up' do
   redirect '/home'
 end
 
-delete '/delete' do
-  # @user = User.find(session[:user_id])
-  # @account = Account.find(session[:account_id])
-  user.account.destroy
-  user.destroy
-  redirect '/'
-  flash[:notice] = "#{params[:email]} has been deleted"
-end
-
-post '/post/new' do
+post '/post' do
   puts "These are my params " + params.inspect
   @user = User.find(current_user)
   @post = Post.new(params[:post])
@@ -130,7 +123,20 @@ end
 
 post '/home' do
   puts params[:post]
-  @post = Post.create(params[:post])
-  flash[:notice] = "Test post"
+  #@post = Post.create(params[:post])
+  #flash[:notice] = "Test post"
   redirect '/home'
 end
+
+post '/delete/account' do
+  # @user = User.find(session[:user_id])
+  # @account = Account.find(session[:account_id])
+  @user = current_user
+  puts current_user.id
+  current_user.post.each{|post| post.destroy}
+  current_user.account.destroy
+  current_user.destroy
+  redirect '/'
+  #flash[:notice] = "#{params[:email]} has been deleted"
+end
+
