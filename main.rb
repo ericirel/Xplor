@@ -28,6 +28,8 @@ end
 
 get '/home' do
   @user = current_user
+  # @post = Post.location
+  # @post = Post.body
   erb :home
 end
 
@@ -37,7 +39,7 @@ end
 
 get '/account' do
   @user = current_user
-  
+
   erb :account
 end
 
@@ -130,6 +132,9 @@ end
 post '/home' do
   puts params[:post]
   @post = Post.create(params[:post])
-  flash[:notice] = "Test post"
+  @post = Post.create(params[:location])
+  # Post.create(location:params[:location])
+  # Post.create(body:params[:body])
+  flash[:notice] = "Post created at #{Time.now}"
   redirect '/home'
 end

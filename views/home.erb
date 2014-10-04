@@ -13,7 +13,12 @@
   <br>
     <button type="submit" value="submit" class="btn btn-primary btn-lg">Post</button>
   </form>
-  <h2><%= current_user.post.location %></h2>
-  <p><%= current_user.post.body %></p>
+  <% if @posts %>
+    <% @posts.each do |p| %>
+      <%= p.location %>
+      <%= p.body %>
+      <%= Time.now %>
+      <% end %>
+    <% end %>
 </body>
-
+<!-- put each loop line 16 -->
