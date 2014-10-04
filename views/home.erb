@@ -4,8 +4,7 @@
   </title>
 </head>
 <body id="home">
-  <form method="POST" action="/home">
-  <form method="POST" action="/post/new">
+  <form method="POST" action="/post">
     <label for="location"></label>
       <input type="text" name="[post]location" placeholder="Your Location" class="form-control">
     <label for="body"></label>
@@ -13,12 +12,17 @@
   <br>
     <button type="submit" value="submit" class="btn btn-primary btn-lg">Post</button>
   </form>
-  <% if @posts %>
+  <div id="posts-area">
+  <h2><%= @location %></h2>
+    <% if @posts %>
     <% @posts.each do |p| %>
+    <p id="location" %>
       <%= p.location %>
-      <%= p.body %>
-      <%= Time.now %>
+    </p>
+      <p id="posts"><%= @posts %>
+        <%= p.body %><br>
+      </p>
       <% end %>
     <% end %>
-</body>
+  </div>
 <!-- put each loop line 16 -->

@@ -3,5 +3,8 @@
   <link rel="stylesheet" href="/css/main.css" type="text/css">
 </head>
 <body id="history">
-  
+  <% @user.posts.each do |p| %>
+  <h2><%= @user.email %></h2>
+  <%= p.body %>
+<% end %>
 </body>

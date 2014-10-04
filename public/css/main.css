@@ -249,6 +249,31 @@ textarea{
   background-image: no-repeat;
 }
 
+#posts-area{
+  max-width: 300px;
+  margin-left: 650px;
+  margin-top: -350px;
+}
+
+#posts{
+  background-color: rgb(171, 197, 239);
+  padding: 10px;
+  border: 1px solid black;
+}
+
+#posts-area #posts{
+  font-family: sans-serif;
+}
+
+#location{
+  background-color: #fafafa;
+  font-weight: 600;
+  font-family: sans-serif;
+  height: 20px;
+  border: 1px solid black;
+  margin-top: 12px;
+}
+
 /***************************************************
 ***************SIGN-UP PAGE*************************
 ***************************************************/
@@ -314,13 +339,21 @@ textarea{
   background-image: no-repeat;
 }
 
-#sign-out h1 {
+#goodbye {
+  width: 550px;
+  height:150px;
+  padding-top: 15px;
+  margin: 125px auto;
+  background-color: rgba(240, 255, 255, .7);
+}
+
+#goodbye h1 {
   text-align: center;
   font-family: 'Big Caslon', serif;
   font-size: 3em;
 }
 
-#sign-out p {
+#goodbye p {
   text-align: center;
   font-family: 'Lucida Grande', sans-serif;
   font-size: 20px;
