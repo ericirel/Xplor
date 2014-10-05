@@ -134,7 +134,6 @@ post '/home' do
   # Post.create(body:params[:body])
   flash[:notice] = "Post created at #{Time.now}"
   #@post = Post.create(params[:post])
-  #flash[:notice] = "Test post"
   redirect '/home'
 end
 
