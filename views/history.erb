@@ -3,11 +3,16 @@
   <link rel="stylesheet" href="/css/main.css" type="text/css">
 </head>
 <body id="history">
+  <div id="user-history">
     <h2 id="current-user"><%= @user.email %></h2>
-  <% @user.posts.each do |p| %>
-  <h2><%= @user.email %></h2>
-  <p class="posts">
-  <%= p.body %>
-</p>
-<% end %>
+    <% @user.posts.each do |p| %>
+    <h2><%= @user.email %></h2>
+    <p id="post-location">
+    <%= p.location %>
+    </p>
+    <p id="post-body">
+    <%= p.body %>
+    </p>
+    <% end %>
+  </div>
 </body>

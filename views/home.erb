@@ -14,16 +14,16 @@
   </form>
   <h2 id="current-user"><%= @user.email %></h2>
   <div class="posts-area">
-  <h2><%= @location %></h2>
-    <% if @posts %>
-    <% @user.posts.each do |p| %>
-    <p class="location" %>
-      <%= p.location %>
-    </p>
-      <p class="posts"><%= @posts %>
-        <%= p.body %><br>
+    <h2><%= @location %></h2>
+      <% if @posts %>
+      <% @user.posts.each do |p| %>
+      <p class="location" %>
+        <%= p.location %>
       </p>
+        <p class="posts"><%= @posts %>
+          <%= p.body %><br>
+        </p>
+        <% end %>
       <% end %>
-    <% end %>
   </div>
 <!-- put each loop line 16 -->

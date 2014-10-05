@@ -90,7 +90,7 @@ post '/sign-out' do
   @user = User.where(email: params[:email]).first
   #session.clear
   session[:user_id] = nil
-  flash[:notice] = "#{params[:email]} has logged out"
+  #flash[:notice] = "#{params[:email]} has logged out"
   redirect '/sign-out'
 end
 

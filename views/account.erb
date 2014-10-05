@@ -3,17 +3,17 @@
   <link rel="stylesheet" href="/css/main.css" type="text/css">
 </head>
 <body id="account">
-    <h2 id="current-user"><%= @user.email %></h2>
+    <h2 id="current-user"><%= @user.email %></h2> 
  <!--  <form id="user" action="/sign-up" method="POST"> -->
     <form class="pure-form pure-form-stacked" action="/sign-up" method="POST">
  <!--    <fieldset id="user-field"> -->
       <legend>Account Details</legend>
       <ul>
-        <input type="text" name="fname" value=<%= current_user.account.fname %>>
+        <input type="text" name="fname" value="<%= current_user.account.fname %>">
         <label for="[account]fname">First Name</label>
-        <input type="text" name="lname" value=<%= current_user.account.lname %>>
+        <input type="text" name="lname" value="<%= current_user.account.lname %>">
         <label for="[account]lname">Last Name</label>
-        <input type="text" name="hometown" value=<%= current_user.account.hometown %>>
+        <input type="text" name="hometown" value="<%= current_user.account.hometown %>">
         <label for="[account]hometown">Hometown</label>
         <input type="number" name="age" value="<%= current_user.account.age %>">
         <label for="[account]age">Age</label>

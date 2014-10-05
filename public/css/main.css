@@ -250,7 +250,7 @@ textarea{
 }
 
 .posts-area{
-  max-width: 300px;
+  max-width: 400px;
   margin-left: 650px;
   margin-top: -300px;
 }
@@ -258,20 +258,22 @@ textarea{
 .posts{
   background-color: rgb(171, 197, 239);
   padding: 10px;
-  border: 1px solid black;
+  border-radius: 0 0 15px 15px;
+
 }
 
 .posts-area .posts{
-  font-family: sans-serif;
+  font-family: 'Lucida Grande', sans-serif;
 }
 
 .location{
   background-color: #fafafa;
   font-weight: 600;
-  font-family: sans-serif;
+  font-family: 'Lucida Grande', sans-serif;
   height: 20px;
-  border: 1px solid black;
   margin-top: 12px;
+  padding: 4px 10px;
+  border-radius: 15px 15px 0 0;
 }
 
 #current-user{
@@ -339,6 +341,27 @@ textarea{
   background-image: no-repeat;
 }
 
+#user-history {
+  width: 500px;
+  margin: 0 auto;
+}
+
+#post-location {
+  background-color: #FAFAFA;
+  width: 400px;
+  padding: 4px 10px;
+  border-radius: 15px 15px 0 0;
+}
+
+#post-body {
+  font-family: 'Lucida Grande', sans-serif;
+  background-color: rgb(171, 197, 239);
+  width: 400px;
+  padding-bottom: 10px;
+  padding-top: 4px;
+  padding-left: 10px;
+  border-radius: 0 0 15px 15px;
+}
 /******************************************************
 *****************SIGN-OUT PAGE*************************
 ******************************************************/
