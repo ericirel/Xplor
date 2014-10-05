@@ -249,29 +249,38 @@ textarea{
   background-image: no-repeat;
 }
 
-#posts-area{
+.posts-area{
   max-width: 300px;
   margin-left: 650px;
-  margin-top: -350px;
+  margin-top: -300px;
 }
 
-#posts{
+.posts{
   background-color: rgb(171, 197, 239);
   padding: 10px;
   border: 1px solid black;
 }
 
-#posts-area #posts{
+.posts-area .posts{
   font-family: sans-serif;
 }
 
-#location{
+.location{
   background-color: #fafafa;
   font-weight: 600;
   font-family: sans-serif;
   height: 20px;
   border: 1px solid black;
   margin-top: 12px;
+}
+
+#current-user{
+  font-weight: 600;
+  font-family: sans-serif;
+  color: black;
+  position: absolute;
+  top: 50px;
+  left: 800px;
 }
 
 /***************************************************

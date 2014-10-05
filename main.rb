@@ -54,6 +54,7 @@ get '/login-failed' do
 end
 
 get '/sign-out' do
+  @user = current_user
   erb :signout
 end
 
@@ -86,9 +87,10 @@ post '/sign-in' do
 end
 
 post '/sign-out' do
+  @user = User.where(email: params[:email]).first
   #session.clear
   session[:user_id] = nil
-  # flash[:notice] = "#{params[:email]} has logged out"
+  flash[:notice] = "#{params[:email]} has logged out"
   redirect '/sign-out'
 end
 
@@ -124,6 +126,7 @@ patch '/' do
 end
 
 post '/home' do
+  @user = current_user.post
   puts params[:post]
   @post = Post.create(params[:post])
   @post = Post.create(params[:location])

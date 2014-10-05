@@ -3,8 +3,11 @@
   <link rel="stylesheet" href="/css/main.css" type="text/css">
 </head>
 <body id="history">
+    <h2 id="current-user"><%= @user.email %></h2>
   <% @user.posts.each do |p| %>
   <h2><%= @user.email %></h2>
+  <p class="posts">
   <%= p.body %>
+</p>
 <% end %>
 </body>
