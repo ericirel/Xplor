@@ -16,8 +16,8 @@
   <div class="posts-area">
     <p><%= @location %></p>
       <% if @posts %>
-      <% @user.posts.each do |p| %>
-      <h2><%= @user.account.fname + " " + @user.account.lname %></h2>
+      <% Post.last(10).each do |p| %>
+      <h2><%= @user.account.fname %></h2>
       <p class="location">
         <%= p.location %>
       </p>

@@ -5,20 +5,20 @@
 <body id="account">
     <h2 id="current-user"><%= @current_user.account.fname + " " + @current_user.account.lname %></h2> 
  <!--  <form id="user" action="/sign-up" method="POST"> -->
-    <form class="pure-form pure-form-stacked" action="/sign-up" method="POST">
+    <form class="pure-form pure-form-stacked" action="/edit" method="POST">
  <!--    <fieldset id="user-field"> -->
       <legend>Account Details</legend>
       <ul>
         <input type="text" name="fname" value="<%= current_user.account.fname %>">
-        <label for="[account]fname">First Name</label>
+        <label for="fname">First Name</label>
         <input type="text" name="lname" value="<%= current_user.account.lname %>">
-        <label for="[account]lname">Last Name</label>
+        <label for="lname">Last Name</label>
         <input type="text" name="hometown" value="<%= current_user.account.hometown %>">
-        <label for="[account]hometown">Hometown</label>
+        <label for="hometown">Hometown</label>
         <input type="number" name="age" value="<%= current_user.account.age %>">
-        <label for="[account]age">Age</label>
+        <label for="age">Age</label>
         <input type="text" name="interests" value="<%= current_user.account.interests %>">
-        <label for="[account]interests">Interests</label>
+        <label for="interests">Interests</label>
         <input type="text" name="email" value="<%= current_user.email %>">
         <label for="email">Email</label>
         <input type="password" name="password" value="<%= current_user.password %>">

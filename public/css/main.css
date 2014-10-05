@@ -252,20 +252,20 @@ textarea{
 .posts-area{
   max-width: 400px;
   margin-left: 650px;
-  margin-top: -300px;
+  margin-top: -350px;
 }
 
 .posts{
   background-color: rgb(171, 197, 239);
-  padding: 10px;
-  border-radius: 0 0 15px 15px;
+  padding: 2px 10px;
+  font-family: 'Lucida Grande', sans-serif;
+  font-size: 14px;
 
 }
 
 .posts-area h2 {
   background-color: #FAFAFA;
   padding: 4px 10px;
-  border-radius: 15px 15px 0 0;
   border-bottom: 1px solid #E3E3E3;
 }
 
@@ -277,8 +277,8 @@ textarea{
   background-color: rgb(171, 197, 239);
   font-weight: 600;
   font-family: 'Lucida Grande', sans-serif;
-  height: 20px;
-  padding: 4px 10px;
+  font-size: 14px;
+  padding: 2px 10px;
   
 }
 

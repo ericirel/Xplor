@@ -110,6 +110,27 @@ post '/sign-up' do
   redirect '/'
 end
 
+post '/edit' do
+  current_user
+  puts "***********"
+  puts "These are my params " + params.inspect
+  puts "***********"
+  current_user.account.update_attributes(
+    fname: params[:fname],
+    lname: params[:lname],
+    hometown: params[:hometown],
+    age: params[:age],
+    interests: params[:interests],
+    )
+  current_user.update_attributes(
+    email: params[:email],
+    password: params[:password]
+    )
+
+  redirect '/home'
+  
+end
+
 post '/post' do
   puts "These are my params " + params.inspect
   @user = User.find(current_user)
