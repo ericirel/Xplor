@@ -12,12 +12,13 @@
   <br>
     <button type="submit" value="submit" class="btn btn-primary btn-lg">Post</button>
   </form>
-  <h2 id="current-user"><%= @user.email %></h2>
+  <h2 id="current-user"><%= @user.account.fname + " " + @user.account.lname %></h2>
   <div class="posts-area">
-    <h2><%= @location %></h2>
+    <p><%= @location %></p>
       <% if @posts %>
       <% @user.posts.each do |p| %>
-      <p class="location" %>
+      <h2><%= @user.account.fname + " " + @user.account.lname %></h2>
+      <p class="location">
         <%= p.location %>
       </p>
         <p class="posts"><%= @posts %>

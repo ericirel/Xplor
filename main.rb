@@ -107,7 +107,7 @@ post '/sign-up' do
   @age = params[:age]
   @interests = params[:interests]
   @account.save!
-  redirect '/home'
+  redirect '/'
 end
 
 post '/post' do

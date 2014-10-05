@@ -3,10 +3,10 @@
   <link rel="stylesheet" href="/css/main.css" type="text/css">
 </head>
 <body id="history">
+  <h2 id="current-user"><%= @current_user.account.fname + " " + @current_user.account.lname %></h2>
   <div id="user-history">
-    <h2 id="current-user"><%= @user.email %></h2>
     <% @user.posts.each do |p| %>
-    <h2><%= @user.email %></h2>
+    <h2><%= @current_user.account.fname + " " + @current_user.account.lname %></h2>
     <p id="post-location">
     <%= p.location %>
     </p>
