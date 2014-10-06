@@ -142,7 +142,7 @@ post '/edit' do
     )
 
   redirect '/home'
-  
+
 end
 
 post '/post' do
@@ -168,5 +168,17 @@ post '/home' do
   redirect '/home'
 end
 
+post '/delete/account' do
+  # @user = User.find(session[:user_id])
+  # @account = Account.find(session[:account_id])
+  @user = current_user
+  puts current_user.id
+  # current_user.post.each{|post| post.destroy}
+  current_user.account.destroy
+  current_user.destroy
+  flash[:notice] = "Account destroyed"
+  redirect '/'
+  #flash[:notice] = "#{params[:email]} has been deleted"
+end
 
 

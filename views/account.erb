@@ -3,7 +3,7 @@
   <link rel="stylesheet" href="/css/main.css" type="text/css">
 </head>
 <body id="account">
-    <h2 id="current-user"><%= @current_user.account.fname + " " + @current_user.account.lname %></h2> 
+    <h2 id="current-user"><%= @current_user.account.fname + " " + @current_user.account.lname %></h2>
  <!--  <form id="user" action="/sign-up" method="POST"> -->
     <form class="pure-form pure-form-stacked" action="/edit" method="POST">
  <!--    <fieldset id="user-field"> -->
@@ -28,8 +28,8 @@
       </ul>
     </fieldset>
   </form>
-  <form action='/delete' method='GET'>
-    <button type="button" name="submit" class="btn btn-danger" value="submit">Delete Account</button>
+  <form action='/delete/account' method='POST'>
+    <button type="submit" class="btn btn-danger">Delete Account</button>
   </form>
 </body>
 
