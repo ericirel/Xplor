@@ -64,6 +64,16 @@ get '/post' do
   @posts = Post.all
 end
 
+# get '/delete' do
+#   # @user = User.find(session[:user_id])
+#   # @account = Account.find(session[:account_id])
+#   current_user
+#   current_user.post.each{|post| post.destroy}
+#   current_user.account.destroy
+#   current_user.destroy
+#   redirect '/'
+#   #flash[:notice] = "#{params[:email]} has been deleted"
+# end
 
 #####################
         #POST
@@ -71,7 +81,9 @@ end
 
 post '/sign-in' do
   @user = User.where(email: params[:email]).first
+  puts "************"
   puts "These are my params " + params.inspect
+  puts "************"
   if !@user
     flash[:notice] = "#{params[:email]} does not match our records."
     redirect '/'
@@ -95,7 +107,9 @@ post '/sign-out' do
 end
 
 post '/sign-up' do
+  puts "***********"
   puts "These are my params " + params.inspect
+  puts "***********"
   @user = User.create(params[:user])
   @account = Account.new(params[:account])
   @account.user_id = @user.id
@@ -142,10 +156,6 @@ post '/post' do
   redirect '/home'
 end
 
-patch '/' do
-
-end
-
 post '/home' do
   @user = current_user.post
   puts params[:post]
@@ -158,15 +168,5 @@ post '/home' do
   redirect '/home'
 end
 
-post '/delete/account' do
-  # @user = User.find(session[:user_id])
-  # @account = Account.find(session[:account_id])
-  @user = current_user
-  puts current_user.id
-  current_user.post.each{|post| post.destroy}
-  current_user.account.destroy
-  current_user.destroy
-  redirect '/'
-  #flash[:notice] = "#{params[:email]} has been deleted"
-end
+
 

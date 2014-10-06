@@ -17,7 +17,7 @@
     <p><%= @location %></p>
       <% if @posts %>
       <% Post.last(10).each do |p| %>
-      <h2><%= @user.account.fname %></h2>
+      <h2><%= current_user.account.fname %></h2>
       <p class="location">
         <%= p.location %>
       </p>
